@@ -1,0 +1,349 @@
+{
+  "AC": [
+    {
+      "info": "Comemoração do dia do evangélico.",
+      "name": "Dia do Evangélico",
+      "type": "Feriado Estadual (AC)",
+      "date": "01-23"
+    },
+    {
+      "info": "No Acre o dia da mulher é feriado devido ao Decreto Estadual n.º 3.046, de 27/12/2011.",
+      "name": "Dia da Mulher",
+      "type": "Feriado Estadual (AC)",
+      "date": "03-08"
+    },
+    {
+      "info": "Comemoração do aniversário do estado.",
+      "type": "Feriado Estadual (AC)",
+      "name": "Aniversário do Acre",
+      "date": "06-15"
+    },
+    {
+      "info": "Feriado criado para a conscientização sobre a importância da floresta e do meio ambiente.",
+      "type": "Feriado Estadual (AC)",
+      "name": "Dia da Amazônia",
+      "date": "09-05"
+    },
+    {
+      "info": "Feriado devido a assinatura do Tratado de Petrópolis.",
+      "name": "Tratado de Petrópolis",
+      "type": "Feriado Estadual (AC)",
+      "date": "11-17"
+    }
+  ],
+  "AL": [
+    {
+      "info": "Dia de São João Batista.",
+      "type": "Feriado Estadual (AL)",
+      "name": "Dia de São João Batista",
+      "date": "06-24"
+    },
+    {
+      "info": "Festejos do dia de São Pedro.",
+      "type": "Feriado Estadual (AL)",
+      "name": "Dia de São Pedro",
+      "date": "06-29"
+    },
+    {
+      "info": "Dia da emancipação política de Alagoas.",
+      "type": "Feriado Estadual (AL)",
+      "name": "Emancipação de Alagoas",
+      "date": "09-16"
+    },
+    {
+      "info": "Data da morte de Zumbi dos Palmares.",
+      "type": "Feriado Estadual (AL)",
+      "name": "Dia da Consciência Negra",
+      "date": "11-20"
+    }
+  ],
+  "AM": [
+    {
+      "info": "Elevação do Amazonas à categoria de província.",
+      "name": "Elevação à categoria de província",
+      "type": "Feriado Estadual (AM)",
+      "date": "09-05"
+    },
+    {
+      "info": "Data da morte de Zumbi dos Palmares.",
+      "name": "Dia da Consciência Negra",
+      "type": "Feriado Estadual (AM)",
+      "date": "11-20"
+    },
+    {
+      "info": "Dia de Nossa Senhora Imaculada Conceição.",
+      "name": "Imaculada Conceição",
+      "type": "Feriado Estadual (AM)",
+      "date": "12-08"
+    }
+  ],
+  "AP": [
+    {
+      "info": "Dia de São José, o padroeiro do estado.",
+      "type": "Feriado Estadual (AP)",
+      "name": "Dia de São José",
+      "date": "03-19"
+    },
+    {
+      "info": "Dia da Criação do Território Federal.",
+      "type": "Feriado Estadual (AP)",
+      "name": "Criação do Território",
+      "date": "10-05"
+    },
+    {
+      "info": "Comemoração do dia de São Tiago.",
+      "type": "Feriado Estadual (AP)",
+      "name": "Dia de São Tiago",
+      "date": "07-25"
+    },
+    {
+      "info": "Data da morte de Zumbi dos Palmares.",
+      "type": "Feriado Estadual (AP)",
+      "name": "Dia da Consciência Negra",
+      "date": "11-20"
+    }
+  ],
+  "BA": [
+    {
+      "info": "",
+      "type": "Feriado Estadual (BA)",
+      "name": "Independência da Bahia",
+      "date": "07-02"
+    }
+  ],
+  "CE": [
+    {
+      "info": "Dia de São José, o padroeiro do estado.",
+      "name": "Dia de São José",
+      "type": "Feriado Estadual (CE)",
+      "date": "03-19"
+    },
+    {
+      "info": "Feriado em homenagem a Abolição da Escravidão no Ceará.",
+      "type": "Feriado Estadual (CE)",
+      "name": "Abolição da Escravidão",
+      "date": "03-25"
+    }
+  ],
+  "DF": [
+    {
+      "info": "Dia da fundação de Brasília.",
+      "name": "Fundação de Brasília",
+      "type": "Feriado Estadual (DF)",
+      "date": "04-21"
+    },
+    {
+      "info": "",
+      "name": "Dia do Evangélico",
+      "type": "Feriado Estadual (DF)",
+      "date": "11-30"
+    }
+  ],
+  "ES": [
+    {
+      "mobileDates": {
+        "2026": "04-13",
+        "2022": "04-25",
+        "2012": "04-16",
+        "2016": "04-04",
+        "2019": "04-29",
+        "2021": "04-12",
+        "2015": "04-13",
+        "2025": "04-28",
+        "2028": "04-24",
+        "2018": "04-09",
+        "2020": "04-20",
+        "2014": "04-28",
+        "2024": "04-08",
+        "2027": "04-05",
+        "2023": "04-17",
+        "2013": "04-08",
+        "2017": "04-24"
+      },
+      "info": "Dia de Nossa Senhora da Penha, celebrado 8 dias após a Páscoa.",
+      "name": "Nossa Senhora da Penha",
+      "type": "Feriado Estadual (ES)",
+      "date": ""
+    }
+  ],
+  "GO": [
+    {
+      "info": "Nesse dia não há expediente nas repartições e serviços do Estado.",
+      "name": "Fundação de Goiás",
+      "type": "Feriado Estadual (GO)",
+      "date": "07-26"
+    },
+    {
+      "info": "Nesse dia não há expediente nas repartições e serviços do Estado.",
+      "name": "Lançamento da Pedra Fundamental",
+      "type": "Feriado Estadual (GO)",
+      "date": "10-24"
+    }
+  ],
+  "MA": [
+    {
+      "info": "Adesão do Maranhão à Independência do Brasil.",
+      "type": "Feriado Estadual (MA)",
+      "name": "Adesão à Independência do Brasil",
+      "date": "07-28"
+    },
+    {
+      "info": "Dia de Nossa Senhora Imaculada Conceição.",
+      "type": "Feriado Estadual (MA)",
+      "name": "Imaculada Conceição",
+      "date": "12-08"
+    }
+  ],
+  "MG": [
+    {
+      "info": "",
+      "name": "Data Magna do Estado",
+      "type": "Feriado Estadual (MG)",
+      "date": "04-21"
+    }
+  ],
+  "MS": [
+    {
+      "info": "Criação do estado de Mato Grosso do Sul.",
+      "name": "Criação do Estado",
+      "type": "Feriado Estadual (MS)",
+      "date": "10-11"
+    }
+  ],
+  "MT": [
+    {
+      "info": "Data da morte de Zumbi dos Palmares.",
+      "name": "Dia da Consciência Negra",
+      "type": "Feriado Estadual (MT)",
+      "date": "11-20"
+    }
+  ],
+  "PA": [
+    {
+      "info": "Adesão do Grão-Pará à Independência do Brasil.",
+      "name": "Adesão à Independência",
+      "type": "Feriado Estadual (PA)",
+      "date": "08-15"
+    },
+    {
+      "info": "Dia de Nossa Senhora Imaculada Conceição.",
+      "name": "Imaculada Conceição",
+      "type": "Feriado Estadual (PA)",
+      "date": "12-08"
+    }
+  ],
+  "PB": [
+    {
+      "info": "Data da emancipação política do estado.",
+      "type": "Feriado Estadual (PB)",
+      "name": "Fundação do estado",
+      "date": "08-05"
+    }
+  ],
+  "PE": [
+    {
+      "info": "A Data Magna do Estado de Pernambuco refere-se ao dia de eclosão da Revolução Pernambucana de 1817, a primeira em escala nacional a lutar pela independência do Brasil.",
+      "type": "Feriado Estadual (PE)",
+      "name": "Data Magna de Pernambuco",
+      "date": "03-06"
+    },
+    {
+      "info": "Dia de São João Batista.",
+      "name": "Dia de São João Batista",
+      "type": "Feriado Estadual (PE)",
+      "date": "06-24"
+    }
+  ],
+  "PI": [
+    {
+      "info": "Celebração do dia do Piauí.",
+      "type": "Feriado Estadual (PI)",
+      "name": "Dia do Piauí",
+      "date": "10-19"
+    }
+  ],
+  "PR": [],
+  "RJ": [
+    {
+      "info": "Comemoração do dia de São Jorge.",
+      "name": "Dia de São Jorge",
+      "type": "Feriado Estadual (RJ)",
+      "date": "04-23"
+    },
+    {
+      "info": "Data da morte de Zumbi dos Palmares.",
+      "name": "Dia da Consciência Negra",
+      "type": "Feriado Estadual (RJ)",
+      "date": "11-20"
+    }
+  ],
+  "RN": [
+    {
+      "info": "",
+      "name": "Mártires de Cunhaú e Uruaçu",
+      "type": "Feriado Estadual (RN)",
+      "date": "10-03"
+    }
+  ],
+  "RO": [
+    {
+      "info": "Dia da criação do estado.",
+      "type": "Feriado Estadual (RO)",
+      "name": "Criação de Rondônia",
+      "date": "01-04"
+    }
+  ],
+  "RR": [
+    {
+      "info": "Celebração do dia da criação do estado.",
+      "name": "Aniversário de Roraima",
+      "type": "Feriado Estadual (RR)",
+      "date": "10-05"
+    }
+  ],
+  "RS": [
+    {
+      "info": "O feriado, também conhecido como Dia do Gaúcho, comemora a Revolução Farroupilha, onde Bento Gonçalves comandou o povo gaúcho com o intuito de derrubar o governo imperial e conseguir a separação do Rio Grande do Sul e elevação de sua condição à uma república e não somente um estado incorporado aos demais. ",
+      "type": "Feriado Estadual (RS)",
+      "name": "República Rio Grandense",
+      "date": "09-20"
+    }
+  ],
+  "SC": [],
+  "SE": [
+    {
+      "info": "Autonomia política de Sergipe.",
+      "type": "Feriado Estadual (SE)",
+      "name": "Autonomia política",
+      "date": "07-08"
+    }
+  ],
+  "SP": [
+    {
+      "info": "A Revolução Constitucionalista de 1932, ou Guerra Paulista, foi o movimento armado ocorrido no Estado de São Paulo, entre os meses de julho e outubro de 1932, que tinha por objetivo a derrubada do Governo Provisório de Getúlio Vargas e a promulgação de uma nova constituição para o Brasil.",
+      "name": "Revolução Constitucionalista",
+      "type": "Feriado Estadual (SP)",
+      "date": "07-09"
+    },
+    {
+      "info": "Data da morte de Zumbi dos Palmares.",
+      "name": "Dia da Consciência Negra",
+      "type": "Feriado Estadual (SP)",
+      "date": "11-20"
+    }
+  ],
+  "TO": [
+    {
+      "info": "Dia de Nossa Senhora da Natividade, a padroeira do estado.",
+      "name": "Nossa Senhora da Natividade",
+      "type": "Feriado Estadual (TO)",
+      "date": "09-08"
+    },
+    {
+      "info": "Celebração do dia da criação do estado.",
+      "name": "Criação de Tocantins",
+      "type": "Feriado Estadual (TO)",
+      "date": "10-05"
+    }
+  ]
+}

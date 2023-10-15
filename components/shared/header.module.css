@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  min-height: 82px;
+}
+
+.appTitle {
+  color: #484848;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+}
+
+@media (max-width: 950px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .divider {
+    display: none;
+  }
+  .nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav li {
+    width: 100%;
+  }
+  .nav li a {
+    display: flex;
+  }
+  .nav li button {
+    width: 100%;
+  }
+}

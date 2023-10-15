@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+  margin: 24px;
+}
+
+.currentYear {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: rgb(66, 66, 66);
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  font-size: 1.1rem;
+}

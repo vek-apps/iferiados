@@ -1,0 +1,36 @@
+.title {
+  text-align: center;
+}
+
+.table {
+  width: 600px;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 8px auto;
+}
+
+@media (max-width: 600px) {
+  .table {
+    width: 400px;
+  }
+}
+@media (max-width: 420px) {
+  .table {
+    width: 320px;
+  }
+}
+
+.table th {
+  height: 40px;
+  border-bottom: 1px solid #ddd;
+  background-color: #eaeaea;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}

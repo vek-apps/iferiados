@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 8px;
+  padding: 16px;
+  background-color: antiquewhite;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 1.4rem;
+}
+
+.infoText {
+  padding: 16px;
+  font-size: 1.1rem;
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.calendarView {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.calendar {
+  width: 90px;
+  margin: auto;
+  text-align: center;
+}
+
+.calendarHead {
+  background-color: var(--primary);
+  line-height: 0.9rem;
+  font-size: 0.84rem;
+  color: #fff;
+  padding: 0.2rem;
+  border-radius: 16px 16px 0 0;
+}
+
+.calendarBody {
+  background-color: #fcfcfc;
+  color: #343434;
+  font-weight: 700;
+  line-height: 56px;
+  font-size: 2.8rem;
+  border-radius: 0 0 16px 16px;
+}

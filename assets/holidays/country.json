@@ -1,0 +1,113 @@
+{
+  "data": [
+    {
+      "info": "O Ano Novo ou dia da Fraternidade Universal é comemorado em praticamente todo o mundo, essa comemoração foi criada pelo Papa Paulo VI em 1968, para que fosse celebrada a Paz, independente de credo, etnia, status social ou econômico.",
+      "name": "Ano Novo",
+      "type": "Feriado Nacional",
+      "date": "01-01"
+    },
+    {
+      "info": "Esse feriado é uma homenagem ao herói nacional brasileiro Joaquim José da Silva Xavier, mártir da Inconfidência Mineira. É celebrado na data da execução de Tiradentes, que ocorreu no ano de 1792.",
+      "type": "Feriado Nacional",
+      "name": "Tiradentes",
+      "date": "04-21",
+      "showDetails": true
+    },
+    {
+      "info": "O motivo do feriado ser comemorado nesse dia se deve especialmente pelo costume dos governos de anunciar neste dia o aumento anual do salário mínimo. Outro motivo seria a criação da Consolidação das Leis do Trabalho - CLT, em 01 de maio de 1943. No Brasil, a data é comemorada desde 1895 e virou feriado nacional em setembro de 1925 por um decreto do presidente Artur Bernardes.",
+      "type": "Feriado Nacional",
+      "name": "Dia do Trabalho",
+      "date": "05-01"
+    },
+    {
+      "info": "Comemoração da Independência do Brasil, processo que culminou com a emancipação política do território brasileiro do Reino Unido de Portugal. A data comemorada é a de 7 de setembro de 1822, em que ocorreu o chamado \"Grito do Ipiranga\".",
+      "name": "Independência do Brasil",
+      "type": "Feriado Nacional",
+      "date": "09-07"
+    },
+    {
+      "info": "Nossa Senhora da Conceição Aparecida, popularmente chamada de Nossa Senhora Aparecida, é a padroeira do Brasil, venerada na Igreja Católica, sua festa litúrgica é celebrada em 12 de outubro, um feriado nacional no Brasil desde que o Papa João Paulo II consagrou a Basílica em 1980. O dia 12 de outubro também foi oficializado como Dia da Criança pelo presidente Arthur Bernardes, em 1924. Mas somente em 1960, quando a Fábrica de Brinquedos Estrela fez uma promoção conjunta com a Johnson e Johnson para lançar a \"Semana do Bebê Robusto\" e aumentar suas vendas, é que a data passou a ser comemorada. A estratégia deu certo, pois desde então o dia das Crianças é comemorado com muitos presentes.",
+      "name": "Nossa Senhora Aparecida",
+      "type": "Feriado Nacional",
+      "date": "10-12"
+    },
+    {
+      "info": "Desde o século II, alguns cristãos rezavam pelos falecidos, visitando os túmulos dos mártires para rezar pelos que morreram. No século V, a Igreja dedicava um dia do ano para rezar por todos os mortos, foi criado então o Dia dos Fiéis Defuntos ou Dia de Finados, que é celebrado pela Igreja Católica no dia 2 de novembro.",
+      "name": "Finados",
+      "type": "Feriado Nacional",
+      "date": "11-02"
+    },
+    {
+      "info": "A Proclamação da República Brasileira foi um levante político-militar ocorrido em 15 de novembro de 1889 que instaurou a forma republicana federativa presidencialista de governo no Brasil, derrubando a monarquia constitucional parlamentarista do Império do Brasil e, por conseguinte, pondo fim à soberania do Imperador Dom Pedro II. Foi, então, proclamada a República dos Estados Unidos do Brasil.",
+      "name": "Proclamação da República",
+      "type": "Feriado Nacional",
+      "date": "11-15"
+    },
+    {
+      "info": "Natal é um feriado religioso cristão comemorado anualmente em 25 de Dezembro e celebra o nascimento de Jesus Cristo.",
+      "type": "Feriado Nacional",
+      "name": "Natal",
+      "date": "12-25"
+    },
+    {
+      "info": "Carnaval é uma festa que se originou na Grécia em meados dos anos 600 a 520 a.C.. Através dessa festa os gregos realizavam seus cultos em agradecimento aos deuses pela fertilidade do solo e pela produção. Passou a ser uma comemoração adotada pela Igreja Católica em 590 d.C. É um período de festas regidas pelo ano lunar no cristianismo da Idade Média. O período do carnaval era marcado pelo \"adeus à carne\" ou do latim \"carne vale\" dando origem ao termo \"carnaval\". \nComo existem alguns estados e cidades que não aderem ao feriado do Carnaval, ele não pode ser considerado um feriado nacional, mas sim uma data comemorativa.",
+      "mobileDates": {
+        "2023": "02-21",
+        "2024": "02-13",
+        "2025": "03-04",
+        "2026": "02-17",
+        "2027": "02-09",
+        "2028": "02-29"
+      },
+      "name": "Carnaval",
+      "type": "Data Comemorativa",
+      "date": "",
+      "showDetails": true
+    },
+    {
+      "info": "Sexta-Feira Santa é a Sexta-Feira antes do Domingo de Páscoa. É a data em que os cristãos lembram o julgamento, crucificação, morte e sepultura de Jesus Cristo, através de diversos rituais religiosos. Também conhecida como Sexta-Feira da Paixão, a Sexta Feira Santa é um feriado móvel. Celebra-se entre 22 de Março e 25 de Abril e serve de referência para outras datas, sendo a primeira Sexta feira de lua cheia após o equinócio de Primavera no hemisfério norte, ou o equinócio de Outono, no hemisfério sul, celebrado a 21 de Março.\n                ",
+      "mobileDates": {
+        "2023": "04-07",
+        "2024": "03-29",
+        "2025": "04-18",
+        "2026": "04-03",
+        "2027": "03-26",
+        "2028": "04-14"
+      },
+      "type": "Feriado Nacional",
+      "name": "Sexta-feira Santa",
+      "date": "",
+      "showDetails": true
+    },
+    {
+      "info": "A Páscoa é uma celebração religiosa onde os cristãos comemoram a ressurreição de Cristo. De acordo com a Bíblia, após sua crucificação, celebrada na Sexta-feira Santa, Jesus Cristo ressuscitou no terceiro dia após a sua morte.\n                ",
+      "mobileDates": {
+        "2023": "04-09",
+        "2024": "03-31",
+        "2025": "04-20",
+        "2026": "04-05",
+        "2027": "03-28",
+        "2028": "04-16"
+      },
+      "type": "Feriado Nacional",
+      "name": "Páscoa",
+      "date": "",
+      "showDetails": true
+    },
+    {
+      "info": "Corpus Christi (expressão latina que significa Corpo de Cristo) é uma festa cristã baseada em tradições católicas. É celebrado 60 dias depois da Páscoa, e no domingo depois de Pentecostes, normalmente com procissões em vias públicas. Como existem alguns estados e cidades que não aderem ao feriado de Corpus Christi, ele não pode ser considerado um feriado nacional, mas sim uma data comemorativa.\n                ",
+      "mobileDates": {
+        "2023": "06-08",
+        "2024": "05-30",
+        "2025": "06-19",
+        "2026": "06-04",
+        "2027": "05-27",
+        "2028": "06-15"
+      },
+      "name": "Corpus Christi",
+      "type": "Feriado Nacional",
+      "date": "",
+      "showDetails": true
+    }
+  ]
+}

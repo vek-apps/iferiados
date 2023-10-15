@@ -1,0 +1,35 @@
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.listGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+.title {
+  padding: 16px;
+  text-align: center;
+  color: #353535;
+  font-size: 1.4rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 300px;
+  font-size: 1.3rem;
+  padding-left: 8px;
+}
+
+@media (max-width: 750px) {
+  .listGrid {
+    grid-template-columns: 1fr;
+  }
+}

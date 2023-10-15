@@ -1,0 +1,27 @@
+.typeTag {
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 16px;
+  display: inline-block;
+  letter-spacing: 0.02rem;
+}
+
+.feriado-nacional {
+  color: #feffde;
+  background: #7aaa71;
+}
+
+.feriado-estadual {
+  color: rgb(255, 255, 255);
+  background: #db843c;
+}
+
+.feriado-municipal {
+  color: rgb(255, 255, 255);
+  background: #427386;
+}
+
+.data-comemorativa {
+  color: #fdfdf7;
+  background: #cac252;
+}

@@ -1,0 +1,56 @@
+.title {
+  padding: 16px;
+  text-align: center;
+  color: #353535;
+  font-size: 1.6rem;
+}
+
+.mobileHolidays {
+  background-color: #f1f9fd;
+  border: 1px solid #d2f0ff;
+  width: 600px;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 24px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobileHolidaysHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mobileHolidaysList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 8px;
+}
+
+.mobileHolidaysList button {
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+@media (max-width: 660px) {
+  .mobileHolidays {
+    width: 380px;
+  }
+  .mobileHolidaysList button {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 380px) {
+  .mobileHolidays {
+    width: 300px;
+  }
+  .mobileHolidaysList button {
+    font-size: 0.9rem;
+  }
+}
