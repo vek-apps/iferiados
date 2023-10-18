@@ -12,27 +12,27 @@ import { makeStringPlain } from "@/utils/holiday-utils";
 import styles from "./page.module.css";
 import Divider from "@/components/shared/divider";
 
-export async function generateStaticParams() {
-  const possibleYears: string[] = [];
-  for (let year = MIN_YEAR; year <= MAX_YEAR; year++) {
-    possibleYears.push(String(year));
-  }
+// export async function generateStaticParams() {
+//   const possibleYears: string[] = [];
+//   for (let year = MIN_YEAR; year <= MAX_YEAR; year++) {
+//     possibleYears.push(String(year));
+//   }
 
-  const params: { estado: string; cidade: string; year: string }[] = [];
+//   const params: { estado: string; cidade: string; year: string }[] = [];
 
-  STATES.forEach((state) => {
-    const stateCode = state.code.toLowerCase();
+//   STATES.forEach((state) => {
+//     const stateCode = state.code.toLowerCase();
 
-    state.cities.forEach((city) => {
-      const cityParam = makeStringPlain(city.name);
-      possibleYears.forEach((year) => {
-        params.push({ year, estado: stateCode, cidade: cityParam });
-      });
-    });
-  });
+//     state.cities.forEach((city) => {
+//       const cityParam = makeStringPlain(city.name);
+//       possibleYears.forEach((year) => {
+//         params.push({ year, estado: stateCode, cidade: cityParam });
+//       });
+//     });
+//   });
 
-  return params;
-}
+//   return params;
+// }
 
 type Params = {
   params: {
