@@ -8,11 +8,18 @@ import Link from "next/link";
 import { makeStringPlain } from "@/utils/holiday-utils";
 
 async function getHolidays(type: string): Promise<Holiday[]> {
-  const res = await fetch(`${process.env.API_URL}/api/holidays?type=${type}`, {
-    // next: { revalidate: 0 },
-    next: { revalidate: 10800 }, // 3 hours
-  });
-  return res.json();
+  try {
+    const res = await fetch(
+      `${process.env.API_URL}/api/holidays?type=${type}`,
+      {
+        // next: { revalidate: 0 },
+        next: { revalidate: 10800 }, // 3 hours
+      }
+    );
+    return res.json();
+  } catch (error) {
+    return Promise.resolve([]);
+  }
 }
 
 export default async function Home() {
