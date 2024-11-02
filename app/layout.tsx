@@ -3,6 +3,7 @@ import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
 import "./globals.css";
 import Script from "next/script";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Feriados",
@@ -16,6 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
+      <Head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2062730333795724"
+          crossOrigin="anonymous"
+        ></script>
+      </Head>
+      
       <Script
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_METRIC}`}
