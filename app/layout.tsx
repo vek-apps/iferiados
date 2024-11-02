@@ -21,6 +21,9 @@ export default function RootLayout({
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_METRIC}`}
       />
 
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2062730333795724"
+     crossorigin="anonymous"></script>
+
       <Script id="ga-gtag" strategy="lazyOnload">
         {`
             window.dataLayer = window.dataLayer || [];
