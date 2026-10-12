@@ -2,37 +2,18 @@ import { STATES } from "@/assets/locations";
 import HolidayList from "@/components/holidays/holiday-list/holiday-list";
 import BackLinkButton from "@/components/shared/back-link-button";
 import YearSwitcher from "@/components/shared/year-switcher";
-import {
-  MAX_YEAR,
-  MIN_YEAR,
-  getHolidaysByCity,
-} from "@/services/holidayService";
+import { getHolidaysByCity } from "@/services/holidayService";
 import { Holiday } from "@/types/holiday.type";
 import { makeStringPlain } from "@/utils/holiday-utils";
 import styles from "./page.module.css";
 import Divider from "@/components/shared/divider";
 
-// export async function generateStaticParams() {
-//   const possibleYears: string[] = [];
-//   for (let year = MIN_YEAR; year <= MAX_YEAR; year++) {
-//     possibleYears.push(String(year));
-//   }
+export const revalidate = 86400;
 
-//   const params: { estado: string; cidade: string; year: string }[] = [];
-
-//   STATES.forEach((state) => {
-//     const stateCode = state.code.toLowerCase();
-
-//     state.cities.forEach((city) => {
-//       const cityParam = makeStringPlain(city.name);
-//       possibleYears.forEach((year) => {
-//         params.push({ year, estado: stateCode, cidade: cityParam });
-//       });
-//     });
-//   });
-
-//   return params;
-// }
+// Generate and cache each municipality on its first request.
+export function generateStaticParams() {
+  return [];
+}
 
 type Params = {
   params: {
