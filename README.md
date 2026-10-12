@@ -2,6 +2,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Copy `.env.example` to `.env.local` and adjust the values for your environment:
+
+```bash
+cp .env.example .env.local
+```
+
+`API_URL` is the app's base URL, without a trailing slash. Replace
+`GOOGLE_ANALYTICS_METRIC` with your Google Analytics 4 measurement ID.
+
 First, run the development server:
 
 ```bash
