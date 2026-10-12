@@ -27,7 +27,8 @@ export function createHoliday(
 }
 
 function initDate(data: HolidayData) {
-  let today = new Date();
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
 
   let stringDate: string;
 

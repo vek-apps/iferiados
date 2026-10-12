@@ -14,7 +14,7 @@ function HolidayDatesTable({ title, holiday }: Props) {
   const data: { year: string; date: string }[] = [];
 
   const fixedMonth = holiday.date.getMonth();
-  const fixedDay = holiday.date.getDay();
+  const fixedDay = holiday.date.getDate();
 
   for (let year = MIN_YEAR; year <= MAX_YEAR; year++) {
     let yearDate: Date;
