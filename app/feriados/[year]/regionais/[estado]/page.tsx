@@ -113,6 +113,7 @@ async function StateHolidays({ params }: Params) {
                   return (
                     <Link
                       key={city.id}
+                      prefetch={false}
                       href={`${state.code.toLowerCase()}/${cityLink}`}
                     >
                       <LinkButton height="42px">

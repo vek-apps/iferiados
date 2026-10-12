@@ -35,6 +35,7 @@ async function StateList() {
           {stateList.map((state) => (
             <Link
               key={state.code}
+              prefetch={false}
               href={`regionais/${state.code.toLowerCase()}`}
             >
               <LinkButton height="52px">

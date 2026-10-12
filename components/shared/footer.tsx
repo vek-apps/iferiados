@@ -82,7 +82,7 @@ function Footer() {
           <p>Feriados com data móvel:</p>
           <ul>
             {mainHolidays.map((item) => (
-              <Link key={item.label} href={item.link}>
+              <Link key={item.label} href={item.link} prefetch={false}>
                 <li className={styles.link}>{item.label}</li>
               </Link>
             ))}
@@ -92,7 +92,7 @@ function Footer() {
           <p>Feriados Regionais para:</p>
           <ul>
             {mainLocations.map((item) => (
-              <Link key={item.label} href={item.link}>
+              <Link key={item.label} href={item.link} prefetch={false}>
                 <li className={styles.link}>{item.label}</li>
               </Link>
             ))}
