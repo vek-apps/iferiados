@@ -6,13 +6,10 @@ import {
 } from "@/services/holidayService";
 import { Holiday } from "@/types/holiday.type";
 import styles from "./page.module.css";
-import Divider from "@/components/shared/divider";
+import layout from "@/components/shared/calendar-layout.module.css";
+import CalendarHolidayList from "@/components/holidays/calendar-holiday-list";
 import Link from "next/link";
 import { groupCitiesByInitial, makeStringPlain } from "@/utils/holiday-utils";
-import HolidayList from "@/components/holidays/holiday-list/holiday-list";
-import BackLinkButton from "@/components/shared/back-link-button";
-import LinkButton from "@/components/shared/link-button";
-import YearSwitcher from "@/components/shared/year-switcher";
 
 export async function generateStaticParams() {
   const possibleYears: string[] = [];
@@ -65,68 +62,51 @@ async function StateHolidays({ params }: Params) {
   const citiesByInitial = groupCitiesByInitial(state.cities);
 
   return (
-    <div>
-      <BackLinkButton
-        label="Voltar para a lista de Estados"
-        href={`/feriados/${year}/regionais`}
-      />
-      <h1 className={styles.title}>
-        {state.code}
-        <Divider margin="10px" />
-        {state.name}
-      </h1>
-      <HolidayList
-        holidays={holidays}
-        title={`Feriados Estaduais de ${year}`}
-        emptyMessage="Nenhum feriado estadual"
-      />
-
-      <YearSwitcher
-        currentYear={year}
-        url={`/feriados/year/regionais/${params.estado}`}
-      />
-
-      <div className={styles.citiesSection}>
-        <h2 className={styles.subTitle}>
-          Escolha uma cidade para ver os Feriados Municipais
-        </h2>
-
-        {citiesByInitial.length > 2 ? (
-          <div className={styles.citiesIndex}>
+    <div className={layout.page}>
+      <Link className={styles.backLink} href={`/feriados/${year}/regionais`} prefetch={false}>
+        <span aria-hidden="true">←</span> Lista de estados
+      </Link>
+      <h1 className={layout.title}>Feriados estaduais de {year} em {state.name}</h1>
+      <CalendarHolidayList holidays={holidays} emptyMessage="Nenhum feriado estadual" />
+      <nav className={styles.yearSwitcher} aria-label="Selecionar ano">
+        {Number(year) > MIN_YEAR && (
+          <Link href={`/feriados/${Number(year) - 1}/regionais/${params.estado}`} prefetch={false} aria-label={`Feriados de ${Number(year) - 1}`}>
+            <span aria-hidden="true">←</span> {Number(year) - 1}
+          </Link>
+        )}
+        <span className={styles.currentYear} aria-current="page">{year}</span>
+        {Number(year) < MAX_YEAR && (
+          <Link href={`/feriados/${Number(year) + 1}/regionais/${params.estado}`} prefetch={false} aria-label={`Feriados de ${Number(year) + 1}`}>
+            {Number(year) + 1} <span aria-hidden="true">→</span>
+          </Link>
+        )}
+      </nav>
+      <section className={styles.citiesSection} aria-labelledby="cities-title">
+        <h2 className={styles.subTitle} id="cities-title">Escolha uma cidade para ver os feriados municipais</h2>
+        {citiesByInitial.length > 2 && (
+          <nav className={styles.citiesIndex} aria-label="Cidades por letra inicial">
             {citiesByInitial.map((data) => (
-              <a key={data.initial} href={`#${data.initial}`}>
-                <LinkButton>{data.initial}</LinkButton>
+              <a key={data.initial} href={`#${data.initial}`} aria-label={`Cidades com a letra ${data.initial}`}>
+                {data.initial}
               </a>
             ))}
-          </div>
-        ) : null}
-
-        {citiesByInitial.map((data) => {
-          return (
-            <div key={data.initial}>
-              <div className={styles.cityInitial} id={data.initial}>
-                {data.initial}
-              </div>
-              <div className={styles.cityList}>
-                {data.cities.map((city) => {
-                  const cityLink = makeStringPlain(city.name);
-                  return (
-                    <Link
-                      key={city.id}
-                      prefetch={false}
-                      href={`${state.code.toLowerCase()}/${cityLink}`}
-                    >
-                      <LinkButton height="42px">
-                        <div className={styles.cityItem}>{city.name}</div>
-                      </LinkButton>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+          </nav>
+        )}
+        {citiesByInitial.map((data) => (
+          <section key={data.initial}>
+            <h3 className={styles.cityInitial} id={data.initial}>{data.initial}</h3>
+            <ul className={styles.cityList}>
+              {data.cities.map((city) => (
+                <li key={city.id}>
+                  <Link className={styles.cityLink} prefetch={false} href={`${state.code.toLowerCase()}/${makeStringPlain(city.name)}`}>
+                    <span>{city.name}</span><span aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
+      </section>
     </div>
   );
 }

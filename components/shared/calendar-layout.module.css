@@ -1,0 +1,199 @@
+.page {
+  --home-blue: #295dcc;
+  --home-text: #202f45;
+  --home-muted: #59697e;
+  --home-border: #dce3ee;
+  color: var(--home-text);
+  padding: 40px 24px 48px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* The shared shell receives this appearance only on pages using the light calendar layout.
+   No client-side route detection or change to rendering/cache is needed. */
+:global(body):has(.page) {
+  color-scheme: light;
+  color: #202f45;
+  background: #f5f7fb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+:global(body):has(.page) > header {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 16px;
+  max-width: 960px;
+  padding: 24px 24px 0;
+  background: #fff;
+  border-bottom: 1px solid #dce3ee;
+}
+
+:global(body):has(.page) > header > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+:global(body):has(.page) > header > a::before {
+  content: "";
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  background: #eaf0fd url("../../assets/icons/calendar.svg") center / 21px no-repeat;
+  border-radius: 9px;
+}
+
+:global(body):has(.page) > header > a > span {
+  color: #202f45;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+:global(body):has(.page) > header nav { width: 100%; }
+:global(body):has(.page) > header nav ul {
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0 24px;
+}
+:global(body):has(.page) > header nav li { width: auto; }
+:global(body):has(.page) > header nav ul > div { display: none; }
+:global(body):has(.page) > header nav a { display: block; }
+:global(body):has(.page) > header nav button {
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 12px 16px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 8px 8px 0 0;
+  background: transparent;
+  color: #59697e;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+:global(body):has(.page) > header nav a[aria-current="page"] button {
+  border-bottom-color: #295dcc;
+  color: #295dcc;
+}
+:global(body):has(.page) > header nav a:hover button,
+:global(body):has(.page) > header nav button:hover,
+:global(body):has(.page) > header nav button:focus-visible,
+:global(body):has(.page) > header nav button:active {
+  background: #eaf0fd;
+  color: #295dcc;
+}
+:global(body):has(.page) a:focus-visible {
+  outline: 3px solid #295dcc;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.title {
+  color: var(--home-text);
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.18;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+.monthGroup { margin-top: 32px; }
+.monthTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.monthTitle span { font-size: 14px; font-weight: 400; color: var(--home-muted); }
+.monthTitle::after { content: ""; flex: 1; height: 1px; background: var(--home-border); }
+.holidayList { list-style: none; display: grid; gap: 12px; }
+.holidayCard {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 22px;
+  background: #fff;
+  border: 1px solid var(--home-border);
+  border-radius: 14px;
+}
+.nextHoliday { border-color: var(--home-blue); }
+.calendar {
+  overflow: hidden;
+  border: 1px solid var(--home-border);
+  border-radius: 9px;
+  text-align: center;
+  background: #fff;
+}
+.calendarMonth {
+  display: block;
+  padding: 4px 2px;
+  background: rgb(89, 149, 226);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.calendarDay { display: block; padding: 5px; font-size: 30px; line-height: 1.2; font-weight: 650; }
+.holidayInfo h3 { font-size: 18px; line-height: 1.35; letter-spacing: -.25px; font-weight: 650; }
+.holidayInfo h3 a { text-decoration: underline; text-decoration-color: #b6c7e9; text-underline-offset: 4px; }
+.holidayInfo h3 a:hover { color: var(--home-blue); text-decoration-color: currentColor; }
+.holidayInfo p { color: var(--home-muted); font-size: 13px; margin-top: 5px; }
+.typeTag { background: #edf5ee; color: #365f41; border-radius: 6px; font-size: 11px; padding: 4px 8px; }
+.commemorative { background: #fff3dc; color: #775110; }
+.mobileHolidays { margin-top: 36px; padding-top: 26px; border-top: 1px solid var(--home-border); }
+.mobileHolidaysHeader { display: flex; align-items: center; gap: 9px; }
+.mobileHolidaysHeader h2 { font-size: 18px; font-weight: 600; }
+.mobileHolidaysList { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.mobileHolidayLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--home-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--home-blue);
+  font-size: 13px;
+}
+.mobileHolidayLink:hover { border-color: var(--home-blue); background: #eaf0fd; }
+.emptyMessage { padding: 28px 0; color: var(--home-muted); }
+
+:global(body):has(.page) > footer {
+  margin-top: 0;
+  padding: 30px 24px;
+  background: #fff;
+  border-top: 1px solid #dce3ee;
+}
+:global(body):has(.page) > footer > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 912px;
+  margin: 0 auto 28px;
+}
+:global(body):has(.page) > footer ul { margin-left: 0; }
+:global(body):has(.page) > footer li { color: #59697e; font-size: 13px; font-weight: 400; padding: 3px 0; }
+:global(body):has(.page) > footer div p { color: #202f45; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+:global(body):has(.page) > footer > p { color: #59697e; font-size: 12px; }
+
+@media (max-width: 640px) {
+  .page { padding: 28px 18px 36px; }
+  :global(body):has(.page) > header { padding: 20px 18px 0; }
+  :global(body):has(.page) > header nav ul { gap: 0 18px; }
+  :global(body):has(.page) > header nav button { font-size: 12px; min-height: 44px; }
+  .holidayCard { grid-template-columns: 76px minmax(0, 1fr); gap: 8px 14px; padding: 16px; }
+  .calendar { grid-row: span 2; align-self: start; }
+  .holidayInfo h3 { font-size: 16px; }
+  .typeTag { grid-column: 2; justify-self: start; }
+  .monthTitle { font-size: 15px; }
+  :global(body):has(.page) > footer > div { grid-template-columns: 1fr; gap: 24px; }
+  :global(body):has(.page) > footer a { display: inline-block; min-height: 44px; }
+}

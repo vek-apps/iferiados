@@ -1,4 +1,6 @@
+import Link from "next/link";
 import styles from "./page.module.css";
+import layout from "@/components/shared/calendar-layout.module.css";
 import { Holiday } from "@/types/holiday.type";
 import {
   MAX_YEAR,
@@ -6,7 +8,6 @@ import {
   getHolidayByName,
   getHolidayPlainNamesForDetail,
 } from "@/services/holidayService";
-import HolidayTypeTag from "@/components/holidays/holiday-type-tag/holiday-type-tag";
 import HolidayDatesTable from "@/components/holidays/holiday-dates-table/holiday-dates-table";
 
 export async function generateStaticParams() {
@@ -47,30 +48,35 @@ async function HolidayDetails({ params }: Params) {
   const holiday = await getHoliday(params.name, params.year);
 
   if (!holiday) {
-    return <div>Sem informações</div>;
+    return <div className={layout.page}><p className={layout.emptyMessage}>Sem informações</p></div>;
   }
 
   return (
-    <>
-      <div className={styles.header}>
-        <div className={styles.calendarView}>
-          <div className={styles.calendar}>
-            <div className={styles.calendarHead}>{holiday.month}</div>
-            <div className={styles.calendarBody}>{holiday.dayOfMonth}</div>
+    <div className={layout.page}>
+      <Link className={styles.backLink} href={`/feriados/${params.year}`} prefetch={false}>
+        <span aria-hidden="true">←</span> Feriados de {params.year}
+      </Link>
+      <article className={styles.details}>
+        <header className={styles.header}>
+          <div className={styles.calendar} aria-hidden="true">
+            <span className={layout.calendarMonth}>{holiday.month}</span>
+            <span className={styles.calendarDay}>{holiday.dayOfMonth}</span>
           </div>
-        </div>
-        <div className={styles.headerInfo}>
-          <h1 className={styles.title}> {holiday.name}</h1>
-          <HolidayTypeTag holiday={holiday} />
-          <div>{holiday.fullDate}</div>
-        </div>
-      </div>
-      <p className={styles.infoText}>{holiday.info}</p>
+          <div className={styles.headerInfo}>
+            <h1 className={layout.title}>{holiday.name}</h1>
+            <p className={styles.date}>{holiday.fullDate}</p>
+            <span className={`${layout.typeTag} ${holiday.type === "Data Comemorativa" ? layout.commemorative : ""}`}>
+              {holiday.type}
+            </span>
+          </div>
+        </header>
+        {holiday.info && <p className={styles.infoText}>{holiday.info}</p>}
+      </article>
       <HolidayDatesTable
         title="Datas do feriado em outros anos"
         holiday={holiday}
       />
-    </>
+    </div>
   );
 }
 

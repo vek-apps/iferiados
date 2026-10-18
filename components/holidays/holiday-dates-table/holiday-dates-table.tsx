@@ -32,13 +32,14 @@ function HolidayDatesTable({ title, holiday }: Props) {
   }
 
   return (
-    <>
-      <h3 className={styles.title}>{title}</h3>
-      <table className={styles.table}>
+    <section className={styles.section} aria-labelledby="holiday-dates-title">
+      <h2 id="holiday-dates-title" className={styles.title}>{title}</h2>
+      <div className={styles.tableContainer}>
+      <table className={styles.table} aria-labelledby="holiday-dates-title">
         <thead>
           <tr>
-            <th>Ano</th>
-            <th>Data</th>
+            <th scope="col">Ano</th>
+            <th scope="col">Data</th>
           </tr>
         </thead>
         <tbody>
@@ -52,7 +53,8 @@ function HolidayDatesTable({ title, holiday }: Props) {
           })}
         </tbody>
       </table>
-    </>
+      </div>
+    </section>
   );
 }
 

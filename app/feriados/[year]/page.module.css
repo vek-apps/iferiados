@@ -1,5 +1,23 @@
-.title {
-  padding: 16px;
-  text-align: center;
-  color: #353535;
+.yearSwitcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--home-border);
 }
+.yearSwitcher a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--home-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--home-blue);
+  font-size: 14px;
+}
+.yearSwitcher a:hover { background: #eaf0fd; border-color: var(--home-blue); }
+.currentYear { color: var(--home-text); font-size: 16px; font-weight: 600; }

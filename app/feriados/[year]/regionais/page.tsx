@@ -2,8 +2,7 @@ import Link from "next/link";
 
 import { STATES } from "@/assets/locations";
 import styles from "./page.module.css";
-import LinkButton from "@/components/shared/link-button";
-import Divider from "@/components/shared/divider";
+import layout from "@/components/shared/calendar-layout.module.css";
 import { MAX_YEAR, MIN_YEAR } from "@/services/holidayService";
 
 export const revalidate = 86400;
@@ -17,7 +16,7 @@ export function generateStaticParams() {
 }
 
 async function StateList() {
-  const stateList = STATES.sort((a, b) => {
+  const stateList = [...STATES].sort((a, b) => {
     const nameA = a.name.toUpperCase();
     const nameB = b.name.toUpperCase();
     if (nameA < nameB) return -1;
@@ -26,30 +25,26 @@ async function StateList() {
   });
 
   return (
-    <>
-      <h1 className={styles.title}>
-        Selecione um Estado para ver os feriados regionais
+    <div className={layout.page}>
+      <h1 className={layout.title}>
+        Selecione um estado para ver os feriados regionais
       </h1>
-      <div className={styles.listContainer}>
-        <div className={styles.listGrid}>
-          {stateList.map((state) => (
+      <ul className={styles.listGrid}>
+        {stateList.map((state) => (
+          <li key={state.code}>
             <Link
-              key={state.code}
+              className={styles.stateLink}
               prefetch={false}
               href={`regionais/${state.code.toLowerCase()}`}
             >
-              <LinkButton height="52px">
-                <div className={styles.listItem}>
-                  {state.code}
-                  <Divider />
-                  {state.name}
-                </div>
-              </LinkButton>
+              <span className={styles.stateCode} aria-hidden="true">{state.code}</span>
+              <span className={styles.stateName}>{state.name}</span>
+              <span className={styles.arrow} aria-hidden="true">→</span>
             </Link>
-          ))}
-        </div>
-      </div>
-    </>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

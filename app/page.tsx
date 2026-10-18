@@ -1,9 +1,8 @@
-import styles from "./page.module.css";
+import styles from "@/components/shared/calendar-layout.module.css";
+import CalendarHolidayList from "@/components/holidays/calendar-holiday-list";
 import { Holiday } from "@/types/holiday.type";
-import HolidayList from "@/components/holidays/holiday-list/holiday-list";
 import Image from "next/image";
 import calendar from "../assets/icons/calendar.svg";
-import LinkButton from "@/components/shared/link-button";
 import Link from "next/link";
 import { makeStringPlain } from "@/utils/holiday-utils";
 
@@ -14,7 +13,7 @@ async function getHolidays(type: string): Promise<Holiday[]> {
       {
         // next: { revalidate: 0 },
         next: { revalidate: 10800 }, // 3 hours
-      }
+      },
     );
     return res.json();
   } catch (error) {
@@ -28,34 +27,40 @@ export default async function Home() {
   const mobileHolidays = holidays.filter((h) => h.mobileDates);
 
   return (
-    <>
-      <h1 className={styles.title}>Próximos Feriados Nacionais:</h1>
-      <HolidayList holidays={holidays} />
+    <div className={styles.page}>
+      <div className={styles.intro}>
+        <h1 className={styles.title}>Próximos feriados nacionais</h1>
+      </div>
+      <CalendarHolidayList holidays={holidays} highlightFirst />
       <section className={styles.mobileHolidays}>
         <div className={styles.mobileHolidaysHeader}>
-          <Image width={24} height={24} src={calendar} alt="Calendário" />
+          <Image width={20} height={20} src={calendar} alt="" />
           <h2>Feriados com data móvel</h2>
         </div>
         <div className={styles.mobileHolidaysList}>
           {mobileHolidays.map((mobileHoliday) => (
             <Link
               key={mobileHoliday.name}
-              href={`feriados/${
+              className={styles.mobileHolidayLink}
+              prefetch={false}
+              href={`/feriados/${
                 mobileHoliday.fullYear
               }/detalhes/${makeStringPlain(mobileHoliday.name)}`}
             >
-              <LinkButton height="42px">{mobileHoliday.name}</LinkButton>
+              {mobileHoliday.name}
+              <span aria-hidden="true">↗</span>
             </Link>
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }
 
 export async function generateMetadata() {
   return {
-    title: `iFeriados Brasil - Guia completo de feriados brasileiros`,
-    description: `Confira facilmente todos os feriados nacionais, estaduais e municipais. Escolha seu estado e cidade para visualizar os feriados regionais.`,
+    title: "iFeriados Brasil - Guia completo de feriados brasileiros",
+    description:
+      "Confira facilmente todos os feriados nacionais, estaduais e municipais. Escolha seu estado e cidade para visualizar os feriados regionais.",
   };
 }

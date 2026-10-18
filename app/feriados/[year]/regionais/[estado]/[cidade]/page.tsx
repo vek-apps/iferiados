@@ -1,12 +1,11 @@
 import { STATES } from "@/assets/locations";
-import HolidayList from "@/components/holidays/holiday-list/holiday-list";
-import BackLinkButton from "@/components/shared/back-link-button";
-import YearSwitcher from "@/components/shared/year-switcher";
-import { getHolidaysByCity } from "@/services/holidayService";
+import CalendarHolidayList from "@/components/holidays/calendar-holiday-list";
+import layout from "@/components/shared/calendar-layout.module.css";
+import Link from "next/link";
+import { MAX_YEAR, MIN_YEAR, getHolidaysByCity } from "@/services/holidayService";
 import { Holiday } from "@/types/holiday.type";
 import { makeStringPlain } from "@/utils/holiday-utils";
 import styles from "./page.module.css";
-import Divider from "@/components/shared/divider";
 
 export const revalidate = 86400;
 
@@ -39,7 +38,7 @@ async function LocalHolidays({ params }: Params) {
   );
 
   if (!state) {
-    return <div>Sem informações</div>;
+    return <div className={layout.page}><p className={layout.emptyMessage}>Sem informações</p></div>;
   }
 
   const city = state.cities.find((city) => {
@@ -48,7 +47,7 @@ async function LocalHolidays({ params }: Params) {
   });
 
   if (!city) {
-    return <div>Sem informações</div>;
+    return <div className={layout.page}><p className={layout.emptyMessage}>Sem informações</p></div>;
   }
 
   const { year } = params;
@@ -56,26 +55,28 @@ async function LocalHolidays({ params }: Params) {
   const cityHolidays = await getCityHolidays(city.id, state.code, year);
 
   return (
-    <div>
-      <BackLinkButton
-        label="Voltar para a lista de Municípios"
-        href={`/feriados/${year}/regionais/${state.code}`}
-      />
-      <h1 className={styles.title}>
-        {city.name}
-        <Divider margin="10px" />
-        {state.code}
-      </h1>
-      <HolidayList
+    <div className={layout.page}>
+      <Link className={styles.backLink} href={`/feriados/${year}/regionais/${state.code.toLowerCase()}`} prefetch={false}>
+        <span aria-hidden="true">←</span> Cidades de {state.name}
+      </Link>
+      <h1 className={layout.title}>Feriados estaduais e municipais de {year} em {city.name} ({state.code})</h1>
+      <CalendarHolidayList
         holidays={cityHolidays}
-        title={`Feriados Estaduais e Municipais de ${year}`}
-        emptyMessage="Nenhum feriado municipal"
+        emptyMessage="Nenhum feriado estadual ou municipal"
       />
-
-      <YearSwitcher
-        currentYear={year}
-        url={`/feriados/year/regionais/${params.estado}/${params.cidade}`}
-      />
+      <nav className={styles.yearSwitcher} aria-label="Selecionar ano">
+        {Number(year) > MIN_YEAR && (
+          <Link href={`/feriados/${Number(year) - 1}/regionais/${params.estado}/${params.cidade}`} prefetch={false} aria-label={`Feriados de ${Number(year) - 1}`}>
+            <span aria-hidden="true">←</span> {Number(year) - 1}
+          </Link>
+        )}
+        <span className={styles.currentYear} aria-current="page">{year}</span>
+        {Number(year) < MAX_YEAR && (
+          <Link href={`/feriados/${Number(year) + 1}/regionais/${params.estado}/${params.cidade}`} prefetch={false} aria-label={`Feriados de ${Number(year) + 1}`}>
+            {Number(year) + 1} <span aria-hidden="true">→</span>
+          </Link>
+        )}
+      </nav>
     </div>
   );
 }

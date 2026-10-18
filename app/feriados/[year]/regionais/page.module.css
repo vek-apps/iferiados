@@ -1,35 +1,41 @@
-.listContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
 .listGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 32px;
+  list-style: none;
 }
-
-.title {
-  padding: 16px;
-  text-align: center;
-  color: #353535;
-  font-size: 1.4rem;
-}
-
-.listItem {
+.stateLink {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  min-width: 300px;
-  font-size: 1.3rem;
-  padding-left: 8px;
+  gap: 16px;
+  height: 100%;
+  min-height: 84px;
+  padding: 18px 20px;
+  border: 1px solid var(--home-border);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--home-text);
 }
-
-@media (max-width: 750px) {
-  .listGrid {
-    grid-template-columns: 1fr;
-  }
+.stateLink:hover {
+  border-color: var(--home-blue);
+  background: #f0f5ff;
+}
+.stateCode {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  height: 44px;
+  border-radius: 9px;
+  background: #eaf0fd;
+  color: var(--home-blue);
+  font-size: 14px;
+  font-weight: 650;
+}
+.stateName { flex: 1; font-size: 16px; font-weight: 600; }
+.arrow { color: var(--home-blue); }
+@media (max-width: 640px) {
+  .listGrid { grid-template-columns: 1fr; margin-top: 24px; }
+  .stateLink { padding: 16px; min-height: 76px; gap: 14px; }
 }

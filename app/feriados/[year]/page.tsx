@@ -1,4 +1,5 @@
-import HolidayCard from "@/components/holidays/holiday-card/holiday-card";
+import Link from "next/link";
+import layout from "@/components/shared/calendar-layout.module.css";
 import styles from "./page.module.css";
 import { Holiday } from "@/types/holiday.type";
 import {
@@ -6,8 +7,7 @@ import {
   MIN_YEAR,
   getHolidaysByYear,
 } from "@/services/holidayService";
-import HolidayList from "@/components/holidays/holiday-list/holiday-list";
-import YearSwitcher from "@/components/shared/year-switcher";
+import CalendarHolidayList from "@/components/holidays/calendar-holiday-list";
 
 export async function generateStaticParams() {
   const possibleYears: string[] = [];
@@ -40,14 +40,26 @@ async function Holidays({ params }: Params) {
   const holidays = await getHolidays(year);
 
   return (
-    <>
-      <h1 className={styles.title}>Feriados Nacionais de {params.year}</h1>
-      <HolidayList
+    <div className={layout.page}>
+      <h1 className={layout.title}>Feriados nacionais de {params.year}</h1>
+      <CalendarHolidayList
         holidays={holidays}
         emptyMessage="Ainda não temos os feriados disponíveis para esse ano..."
       />
-      <YearSwitcher currentYear={year} url="/feriados/year" />
-    </>
+      <nav className={styles.yearSwitcher} aria-label="Selecionar ano">
+        {Number(year) > MIN_YEAR && (
+          <Link href={`/feriados/${Number(year) - 1}`} prefetch={false} aria-label={`Feriados de ${Number(year) - 1}`}>
+            <span aria-hidden="true">←</span> {Number(year) - 1}
+          </Link>
+        )}
+        <span className={styles.currentYear} aria-current="page">{year}</span>
+        {Number(year) < MAX_YEAR && (
+          <Link href={`/feriados/${Number(year) + 1}`} prefetch={false} aria-label={`Feriados de ${Number(year) + 1}`}>
+            {Number(year) + 1} <span aria-hidden="true">→</span>
+          </Link>
+        )}
+      </nav>
+    </div>
   );
 }
 

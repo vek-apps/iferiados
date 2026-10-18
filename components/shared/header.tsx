@@ -1,9 +1,13 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./header.module.css";
 import HeaderButton from "./header-button";
 import Divider from "./divider";
 
 function Header() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
   const nextYear = currentYear + 1;
 
@@ -39,7 +43,7 @@ function Header() {
           {menuItems.map((item) => {
             return (
               <li key={item.title}>
-                <Link href={item.path}>
+                <Link href={item.path} aria-current={pathname === item.path ? "page" : undefined}>
                   <HeaderButton>{item.title}</HeaderButton>
                 </Link>
               </li>
@@ -53,7 +57,7 @@ function Header() {
           {menuItems2.map((item) => {
             return (
               <li key={item.title} className={styles.secondaryMenuItem}>
-                <Link href={item.path}>
+                <Link href={item.path} aria-current={pathname === item.path ? "page" : undefined}>
                   <HeaderButton>{item.title}</HeaderButton>
                 </Link>
               </li>
