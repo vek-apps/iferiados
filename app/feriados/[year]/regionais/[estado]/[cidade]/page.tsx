@@ -7,7 +7,7 @@ import { Holiday } from "@/types/holiday.type";
 import { makeStringPlain } from "@/utils/holiday-utils";
 import styles from "./page.module.css";
 
-export const revalidate = 86400;
+export const revalidate = false;
 
 // Generate and cache each municipality on its first request.
 export function generateStaticParams() {
