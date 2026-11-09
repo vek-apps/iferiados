@@ -1,0 +1,8 @@
+User-agent: ShapBot
+Disallow: /
+
+User-agent: SERankingBacklinksBot
+Disallow: /
+
+User-agent: *
+Allow: /
